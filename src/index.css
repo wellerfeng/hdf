@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+.demo-logo-vertical {
+	background-color: aliceblue;
+	width: 80%;
+	height: 40px;
+	margin: 16px auto;
+	border-radius: 8px;
+}
+.login {
+	background-image: url(./assets/img/bb.jpg);
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
