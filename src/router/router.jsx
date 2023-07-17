@@ -7,6 +7,8 @@ import MedicineCategories from "../pages/MedicineCategories";
 import Login from "../pages/Login";
 import ProtecteRoute from "../components/ProtecteRoute";
 import PageNotFound from "../pages/404";
+import DoctorList from "../pages/hospitals/doctors";
+import HospitalList from "../pages/hospitals/list";
 const router = createHashRouter([
 	{
 		path: "/admin",
@@ -32,6 +34,14 @@ const router = createHashRouter([
 			{
 				path: "medicine_categories",
 				element: <MedicineCategories />,
+			},
+			{
+				path: "hospitals/doctors",
+				element: <DoctorList />,
+			},
+			{
+				path: "hospitals/hospitals",
+				element: <HospitalList />,
 			},
 		],
 	},

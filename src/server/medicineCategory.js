@@ -4,8 +4,8 @@ import { post, get, del, patch } from "../utils/request";
  * @param {*} param0
  * @returns
  */
-export const medicinesAPI = ({ page, pagesize, name }) =>
-	get("/admin/medicine_categories", { page, pagesize, name });
+export const medicinesAPI = ({ page, pageSize, name }) =>
+	get("/admin/medicine_categories", { page, per: pageSize, name });
 
 /**
  * 新增

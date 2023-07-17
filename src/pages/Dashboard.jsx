@@ -1,5 +1,6 @@
+// import BaiduMap from "../components/BaiduMap/index";
 function Dashboard() {
-	return <div>Dashboard</div>;
+	return <div>{/* <BaiduMap></BaiduMap> */}</div>;
 }
 
 export default Dashboard;

@@ -19,6 +19,9 @@ export const getToken = () => sessionStorage.getItem("token");
  */
 export const romoveToken = () => sessionStorage.removeItem("token");
 
+// 文件上传地址
+export const uploadActionUrl = serverUrl + "/common/upload";
+
 export const dalImg = (url) => {
 	if (url) {
 		if (url.startsWith("http")) return url;

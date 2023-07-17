@@ -1,5 +1,10 @@
 import { useState } from "react";
 import {
+	CompassOutlined,
+	DesktopOutlined,
+	MedicineBoxFilled,
+	MedicineBoxOutlined,
+	MedicineBoxTwoTone,
 	MenuFoldOutlined,
 	MenuUnfoldOutlined,
 	UploadOutlined,
@@ -19,10 +24,16 @@ const App = () => {
 
 	return (
 		<Layout style={{ height: "100vh" }}>
-			<Sider trigger={null} collapsible collapsed={collapsed}>
+			<Sider
+				trigger={null}
+				collapsible
+				collapsed={collapsed}
+				style={{ background: "#bf3553" }}
+			>
 				<div className="demo-logo-vertical" />
 				<Menu
-					theme="dark"
+					style={{ background: "#bf3553", color: "#fff" }}
+					// theme="light"
 					mode="inline"
 					onClick={(info) => {
 						navigate(info.key);
@@ -35,26 +46,44 @@ const App = () => {
 							label: "看板",
 						},
 						{
-							key: "/admin/user",
-							icon: <UserOutlined />,
-							label: "用户信息",
+							key: "/admin/hospitals",
+							icon: <DesktopOutlined />,
+							label: "游戏平台",
+							children: [
+								{
+									key: "/admin/hospitals/hospitals",
+									icon: <UploadOutlined />,
+									label: "游戏列表",
+								},
+								{
+									key: "/admin/hospitals/doctors",
+									icon: <CompassOutlined />,
+									label: "知名陪练",
+								},
+							],
 						},
+
 						{
 							key: "/admin/medicine_manager",
-							icon: <UploadOutlined />,
+							icon: <MedicineBoxOutlined />,
 							label: "药品信息",
 							children: [
 								{
 									key: "/admin/medicine",
-									icon: <UploadOutlined />,
+									icon: <MedicineBoxFilled />,
 									label: "药品列表",
 								},
 								{
 									key: "/admin/medicine_categories",
-									icon: <UploadOutlined />,
+									icon: <MedicineBoxTwoTone />,
 									label: "药品分类",
 								},
 							],
+						},
+						{
+							key: "/admin/user",
+							icon: <UserOutlined />,
+							label: "用户信息",
 						},
 					]}
 				/>

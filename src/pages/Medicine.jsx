@@ -28,6 +28,7 @@ import {
 	medicinesAPI,
 	updateByIdAPI,
 } from "../server/medicine";
+import MyEditor from "../components/MyEditor";
 
 const getBase64 = (img, callback) => {
 	const reader = new FileReader();
@@ -46,6 +47,7 @@ function Medicine() {
 		pageSize: 10,
 		name: "",
 	});
+	const [html, setHtml] = useState();
 	// 模态框的显示和隐藏
 	const [isShow, setIsShow] = useState(false);
 	// Form表单的数据绑定
@@ -205,6 +207,7 @@ function Medicine() {
 												setCurrentId(v.id);
 												form.setFieldsValue({ ...v, image: [] });
 												setImageUrl(v.image);
+												medicineCategories();
 											}}
 										></Button>
 										<Popconfirm
@@ -333,6 +336,9 @@ function Medicine() {
 								uploadButton
 							)}
 						</Upload>
+					</Form.Item>
+					<Form.Item name="content">
+						<MyEditor html={html} setHtml={setHtml}></MyEditor>
 					</Form.Item>
 				</Form>
 			</Modal>
